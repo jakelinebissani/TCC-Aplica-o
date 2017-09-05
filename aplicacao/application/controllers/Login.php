@@ -21,7 +21,7 @@ class Login extends CI_Controller
     public function logout()
     {
         $this->session->unset_userdata("usuario_logado");
-        $this->session->unset_userdata("usuario_logado");
-        redirect("/");
+        $this->session->set_flashdata("success", "Deslogado com sucesso");
+        redirect('/');
     }
 }
