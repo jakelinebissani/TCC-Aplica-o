@@ -4,6 +4,7 @@ class Login extends CI_Controller
 {
     public function autenticar()
     {
+        $this->output->enable_profiler(TRUE);
         $this->load->model("Usuarios_model");
         $email = $this->input->post("email");
         $senha = md5($this->input->post("senha"));

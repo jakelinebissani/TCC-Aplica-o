@@ -1,5 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-class Produtos extends CI_Controller {
+class Home extends CI_Controller {
 
     public function index()
     {
@@ -33,5 +33,4 @@ class Produtos extends CI_Controller {
         $this->session->set_flashdata("success", "Produto salvo com sucesso");
         redirect("/");
     }
-
 }
