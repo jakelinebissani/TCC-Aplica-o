@@ -6,30 +6,28 @@
 <body>
 <div class="container">
 
-        <h1>Cadastro de Novo Usuário</h1>
-        <?php
-        echo form_open("usuarios/novo");
+    <?php if($this->session->flashdata("success")) : ?>
+        <p class="alert alert-success"><?= $this->session->flashdata("success") ?></p>
+    <?php endif ?>
 
-        echo form_label("Nome", "nome");
-        echo form_input(array(
-            "name" => "nome",
-            "id" => "nome",
-            "class" => "form-control",
-            "maxlength" => "255"
-        ));
+    <?php if($this->session->flashdata("danger")) : ?>
+        <p class="alert alert-danger"><?= $this->session->flashdata("danger") ?></p>
+    <?php endif ?>
+
+    <?php if($this->session->userdata("usuario_logado")) : ?>
+
+        <?= anchor('usuarios/logout','Logout', array("class" => "btn btn-primary"))?>
+
+    <?php else : ?>
+
+        <h1>Login</h1>
+        <?php
+        echo form_open("usuarios/autenticar");
 
         echo form_label("Email", "email");
         echo form_input(array(
             "name" => "email",
             "id" => "email",
-            "class" => "form-control",
-            "maxlength" => "255"
-        ));
-
-        echo form_label("Matricula", "matricula");
-        echo form_input(array(
-            "name" => "matricula",
-            "id" => "matricula",
             "class" => "form-control",
             "maxlength" => "255"
         ));
@@ -44,13 +42,15 @@
 
         echo form_button(array(
             "class" => "btn btn-primary",
-            "content" => "Cadastrar",
+            "content" => "Login",
             "type" => "submit"
         ));
 
-
         echo form_close();
         ?>
+        <?= anchor('home/novoUsuario','Cadastre-se', array("class" => "btn btn-primary"))?>
+
+    <?php endif ?>
 
 </div>
 </body>

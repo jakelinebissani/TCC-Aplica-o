@@ -6,6 +6,7 @@ class Usuarios extends CI_Controller {
         $usuario = array(
             "nome" => $this->input->post("nome"),
             "email" => $this->input->post("email"),
+            "matricula" => $this->input->post("matricula"),
             "senha" => md5($this->input->post("senha"))
         );
 
