@@ -12,11 +12,11 @@ class Login extends CI_Controller
         if ($usuario) {
             $this->session->set_userdata("usuario_logado", $usuario);
             $this->session->set_flashdata("success" ,"Logado com sucesso");
+            $this->load->view("home/home");
         } else {
-            $this->session->set_flashdata("danger" ,"Usuário ou senha inválida");
+            $this->session->set_flashdata("danger", "Usuário ou senha inválida");
+            redirect('/login');
         }
-
-        redirect("/");
     }
 
     public function logout()

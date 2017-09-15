@@ -16,13 +16,13 @@
 
     <?php if($this->session->userdata("usuario_logado")) : ?>
 
-        <?= anchor('usuarios/logout','Logout', array("class" => "btn btn-primary"))?>
+        <?= anchor('login/logout','Logout', array("class" => "btn btn-primary"))?>
 
     <?php else : ?>
 
         <h1>Login</h1>
         <?php
-        echo form_open("usuarios/autenticar");
+        echo form_open("login/autenticar");
 
         echo form_label("Email", "email");
         echo form_input(array(
