@@ -10,4 +10,8 @@ class Home extends CI_Controller {
         $this->load->view("usuarios/novo");
     }
 
+    public function novaQuestao() {
+        $this->load->view("questoes/nova");
+    }
+
 }

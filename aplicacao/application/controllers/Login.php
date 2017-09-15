@@ -15,7 +15,7 @@ class Login extends CI_Controller
             $this->load->view("home/home");
         } else {
             $this->session->set_flashdata("danger", "Usuário ou senha inválida");
-            redirect('/login');
+            redirect('/');
         }
     }
 

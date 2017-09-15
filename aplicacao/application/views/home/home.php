@@ -10,7 +10,7 @@
 <body>
 <div class="container">
     <?= anchor('login/logout', 'Logout', array("class" => "btn btn-primary")) ?>
-    <?= anchor('questoes/nova', 'Cadastrar Novas Questões', array("class" => "btn btn-primary")) ?>
+    <?= anchor('home/novaQuestao', 'Cadastrar Novas Questões', array("class" => "btn btn-primary")) ?>
 
     <p>home is here</p>
 </div>
