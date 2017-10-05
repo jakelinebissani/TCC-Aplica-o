@@ -11,4 +11,15 @@ class Questoes extends CI_Controller {
         $this->questoes_model->salvar($questao);
         $this->load->view("questoes/nova");
     }
+
+    public function novasAlternativas() {
+        $this->output->enable_profiler(TRUE);
+        $questao = array(
+            "enunciado" => $this->input->post("enunciado"),
+
+        );
+        $this->load->model("alternativas_model");
+        $this->alternativas_model->salvar($questao);
+        $this->load->view("questoes/nova");
+    }
 }
